@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Movie Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="navbar">
+      <div class="logo">
+        <a href="#">IMDb</a>
+      </div>
+      <!-- תיבת בחירה לבחירה בין סרטים פופולריים -->
+      <select id="popularSelect">
+        <option value="default">All Popular Movies</option>
+        <option value="day">Popular Today</option>
+        <option value="week">Popular This Week</option>
+      </select>
+      <ul class="nav-links">
+        <li><a href="#" id="home-link">Home</a></li>
+        <li><a href="#" id="about-link">About</a></li>
+        <!-- עדכון ID -->
+        <li><a href="#" id="favorites-link">Favorites</a></li>
+      </ul>
+      <form class="search-bar" action="#" method="GET">
+        <input
+          type="text"
+          placeholder="Search movies by ID..."
+          aria-label="Search"
+          name="search"
+        />
+        <button type="submit">Search</button>
+      </form>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <div id="movies-container"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; nimrod amos project.</p>
+    </footer>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

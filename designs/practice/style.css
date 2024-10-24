@@ -1,0 +1,17 @@
+#movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.movie {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+}
+
+.movie img {
+  max-width: 100%;
+  height: auto;
+}
