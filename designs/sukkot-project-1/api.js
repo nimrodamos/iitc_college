@@ -1,7 +1,6 @@
-const apiKey = process.env.NEXT_PUBLIC_API_KEY;
-
 // Function to fetch popular movies from the API
 export async function fetchPopularMovies() {
+  const apiKey = process.env.apiKey;
   const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
 
   try {
