@@ -1,74 +1,65 @@
-מסמך אפיון לפרויקט "Movie Hub"
+Project Documentation
 
-1. מבנה כללי של הפרויקט:
-   הפרויקט בנוי ממספר קבצים המחולקים לפי אחריות (modularity). כל קובץ מטפל בחלק מסוים של האפליקציה:
+1. Introduction
 
-HTML: מבנה התצוגה של העמוד הראשי של האתר.
+   About the Project:
+   This project is a movie browsing platform called "Movie Hub." The aim is to provide users with a simple and interactive way to find movies, view popular films, and explore additional details about each movie, such as its cast and overview.
 
-CSS: עיצוב ותצוגה (סגנון) של העמוד.
+2. Features
 
-JavaScript: לוגיקה ותפקוד האתר, כולל טיפול באינטראקציות של המשתמש, כמו חיפוש סרטים, הצגת פרטים והוספה למועדפים. 2. קבצים עיקריים:
+   Home Page:
+   Displays a list of popular movies, including options to filter by movies popular today or this week.
 
-index.html: מכיל את מבנה העמוד הראשי (ה-UI).
+   Movie Details Page:
+   Shows detailed information about a specific movie, including title, release date,
+   overview, and cast list.
 
-styles.css: אחראי על עיצוב האתר כמו צבעים, טיפוגרפיה, עיצוב כפתורים ועוד.
+   Favorites:
+   Users can mark movies as favorites by clicking a star icon, and access a list of their
+   favorite movies from the "Favorites" page.
 
-script.js: מטפל בפעולות של המשתמש, כמו חיפוש סרטים והצגת תוכן.
+   Search by ID:
+   Allows users to search for a specific movie by entering its ID.
 
-api.js: אחראי על קריאות ל-API של TMDB לקבלת מידע על סרטים.
+3. Technologies Used
 
-display.js: מטפל בהצגת סרטים בעמוד.
+   Frontend: HTML, CSS, JavaScript (vanilla).
 
-favorites.js: ניהול סרטים שנוספו למועדפים באמצעות LocalStorage. 3. תיאור הפעולה של הקוד:
+   API Integration: The project uses The Movie Database (TMDb) API to fetch movie data and details.
 
-3.1 HTML (מבנה העמוד):
-header: תפריט עליון שמכיל את הלוגו, קישורים (Home, About, Favorites) וטופס חיפוש.
-main: אזור שבו מוצגים הסרטים שנמצאו.
-footer: תצוגה פשוטה עם קרדיט.
+   Local Storage: Used to store and manage the list of favorite movies.
 
-3.2 CSS (עיצוב העמוד):
-הגדרות צבעים ופונטים קבועות בקובץ ה-CSS בעזרת משתנים (variables), המאפשרים שליטה קלה בכל עיצוב האתר.
-מוגדרים סגנונות עבור הניווט (navbar), כפתורי חיפוש, כרטיסי הסרטים, כוכבי המועדפים, עיצוב רספונסיבי (Responsive) ועוד.
+4. Code Structure
 
-3.3 script.js (תפקוד ראשי):
-תפקידו העיקרי הוא לקשר בין המשתמש לתוכן הדינמי של האפליקציה. מבצע פעולות כמו:
-חיפוש סרט לפי ID: כאשר המשתמש מקליד מזהה סרט בתיבת החיפוש ולוחץ על כפתור החיפוש, מתבצעת קריאה ל-API של TMDB כדי להביא את פרטי הסרט ולהציג אותו על המסך.
-הצגת סרטים פופולריים: עם טעינת העמוד, הקוד מבצע בקשה ל-API של TMDB כדי לקבל את הסרטים הפופולריים ולהציגם.
-קישורי ניווט: לחיצה על קישורים כמו "Home", "Favorites" ו-"About" תציג את התוכן המתאים.
-מועדפים: יש אפשרות להוסיף סרטים לרשימת מועדפים על ידי לחיצה על כוכב הסרט. הסרט נשמר ב-LocalStorage.
+   HTML: Defines the structure and layout of the pages, including the header, main content area, and footer.
 
-3.4 display.js (הצגת תוכן):
-אחראי להצגת סרטים בעמוד:
-displayMovies: מקבל רשימת סרטים ומציג אותם על המסך. כל סרט מוצג בתוך כרטיס שמכיל תמונה, שם הסרט, ותיאור קצר.
-displayFavorites: מציג את הסרטים שנשמרו במועדפים.
-displayAboutPage: מציג עמוד סטטי עם מידע על האתר.
-ישנה גם פונקציה להציג הודעת שגיאה במידה ואין סרטים להציג.
+   CSS: Styles the pages, making the site responsive and visually appealing.
+   JavaScript: Handles interactions with the API, manages favorites, and dynamically updates the DOM with movie data.
 
-3.5 favorites.js (ניהול מועדפים):
-מטפל ברשימת הסרטים שמורים במועדפים:
-getFavorites: מחזיר את רשימת הסרטים שנשמרו במועדפים מה-LocalStorage.
-addToFavorites: מוסיף סרט למועדפים ומעדכן את ה-LocalStorage.
-removeFromFavorites: מסיר סרט מהמועדפים ומעדכן את ה-LocalStorage.
-isFavorite: בודק אם סרט מסוים נמצא ברשימת המועדפים.
+   api.js: Contains functions for interacting with the TMDb API.
 
-3.6 api.js (אינטראקציה עם API חיצוני):
-כל המידע על הסרטים מגיע מ-TMDB API (The Movie Database).
-fetchPopularMovies: שולח בקשה ל-API לקבלת רשימת סרטים פופולריים.
-searchMovieById: שולח בקשה ל-API לקבלת פרטי סרט לפי מזהה ייחודי (ID).
+   display.js: Handles displaying movies, movie details, favorites, and the About page content.
 
-4. תהליכים מרכזיים באפליקציה:
-   הצגת סרטים פופולריים: ברגע שהמשתמש נכנס לאתר, מופעלת הפונקציה fetchPopularMovies שמבצעת קריאה ל-API ומביאה רשימת סרטים פופולריים להצגה בעמוד הראשי.
-   חיפוש סרט לפי ID: כאשר המשתמש מזין מזהה סרט בטופס החיפוש ולוחץ "Search", נשלחת קריאה ל-API של TMDB, והמידע על הסרט מוצג בעמוד.
-   הוספה למועדפים: לחיצה על כוכב שמופיע מעל כל סרט תוסיף את הסרט לרשימת המועדפים, ותעדכן את הכוכב בהתאם (כוכב מלא לסרט שנמצא במועדפים וכוכב ריק לסרט שלא).
-   ניהול מועדפים: הסרטים שנשמרים במועדפים מאוחסנים ב-LocalStorage, כך שהמשתמש יכול לגשת לרשימת המועדפים גם אחרי רענון העמוד.
+   favorites.js: Manages adding/removing movies from favorites and storing them in local storage.
 
-5. שאלות אפשריות ותשובות:
-   איך מתבצע החיפוש?
+   script.js: Manages page navigation and event listeners for different page actions.
 
-החיפוש נעשה לפי מזהה ייחודי (ID) של הסרט. המשתמש מזין את ה-ID בטופס החיפוש והמערכת שולחת קריאה ל-API לקבלת פרטי הסרט.
-איך המועדפים נשמרים?
+5. How to Run the Project
 
-המועדפים נשמרים ב-LocalStorage בדפדפן, כך שגם לאחר רענון העמוד, המידע לא אובד. הפונקציות addToFavorites ו-removeFromFavorites מנהלות את העדכונים ל-LocalStorage.
-איך האפליקציה מתקשרת עם ה-API של TMDB?
+   Clone the project from GitHub.
 
-האפליקציה שולחת בקשות HTTP ל-API של TMDB דרך פונקציות כמו fetchPopularMovies ו-searchMovieById. המידע שמתקבל מ-API מועבד ומוצג למשתמש.
+   Add your apiKey.js file with your TMDb API key, and import it in api.js.
+
+   Open index.html in a live server or local server environment.
+
+   Use the navigation to explore features like popular movies, favorites, and movie details.
+
+6. Future Improvements
+
+   Search by Title: Extend the search functionality to allow searching by title instead of just ID.
+
+   User Authentication: Add user login to enable personalized experiences.
+
+   Comments/Reviews: Allow users to leave comments or reviews on each movie page.
+
+   This is a simplified outline of your project in English. Let me know if you'd like any additional details or modifications.
