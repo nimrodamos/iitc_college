@@ -13,7 +13,7 @@ import {
 
 // Handle search form submission
 document.querySelector(".search-bar").addEventListener("submit", (event) => {
-  event.preventDefault(); // Prevent page reload on form submission
+  event.preventDefault();
   const searchInput = event.target.search.value.trim(); // Get the trimmed value from the search input
   if (searchInput) {
     searchMovieById(searchInput).then((movie) => {
@@ -27,7 +27,7 @@ document.querySelector(".search-bar").addEventListener("submit", (event) => {
 
 // Handle home link click
 document.getElementById("home-link").addEventListener("click", (event) => {
-  event.preventDefault(); // Prevent default anchor behavior
+  event.preventDefault();
   fetchPopularMovies().then((data) => {
     displayMovies(data.results); // Display popular movies
   });

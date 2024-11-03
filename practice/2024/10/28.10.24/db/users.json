@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "username": "User123",
+    "email": "user123@example.com"
+  },
+  {
+    "id": 2,
+    "username": "CoolCoder",
+    "email": "coolcoder@example.com"
+  },
+  {
+    "id": 3,
+    "username": "DevMaster",
+    "email": "devmaster@example.com"
+  },
+  {
+    "id": 4,
+    "username": "Techie",
+    "email": "techie@example.com"
+  },
+  {
+    "id": 5,
+    "username": "CoderQueen",
+    "email": "coderqueen@example.com"
+  },
+  {
+    "id": 6,
+    "username": "JSNinja",
+    "email": "jsninja@example.com"
+  }
+]
