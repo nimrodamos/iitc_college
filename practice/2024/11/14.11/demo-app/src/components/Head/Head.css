@@ -1,0 +1,18 @@
+.head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.recipe-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.recipe-title {
+  font-size: 2rem;
+  color: #333;
+}
