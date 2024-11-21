@@ -2,18 +2,8 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  padding-top: 5.5%;
   background-color: #caffb8;
-}
-
-.title {
-  text-align: center;
-  color: #333;
-  border-radius: 50px;
-}
-
-.description {
-  text-align: center;
-  color: #666;
 }
 
 .pokemonGrid {

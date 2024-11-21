@@ -23,6 +23,11 @@
   max-width: 100%;
   max-height: 100px;
   object-fit: contain;
+  transition: transform 0.2s;
+}
+
+.card img:hover {
+  transform: scale(1.2);
 }
 
 .modalBox {
@@ -31,7 +36,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 70%;
-
   max-width: 400px;
   border-radius: 20px;
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.3);
@@ -53,6 +57,11 @@
   height: 150px;
   margin: 10px 0;
   object-fit: contain;
+  transition: transform 0.2s;
+}
+
+.modalImage:hover {
+  transform: scale(1.2);
 }
 
 .section {

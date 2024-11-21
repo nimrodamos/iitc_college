@@ -15,13 +15,11 @@ function CardPage({
 }) {
   const [open, setOpen] = useState(false);
 
-  const handleOpen = (event) => {
-    event.stopPropagation();
+  const handleOpen = () => {
     setOpen(true);
   };
 
-  const handleClose = (event) => {
-    event.stopPropagation();
+  const handleClose = () => {
     setOpen(false);
   };
 
@@ -36,7 +34,6 @@ function CardPage({
     >
       <img src={image} alt={name} />
       <h3>{name}</h3>
-
       <Modal
         open={open}
         onClose={handleClose}

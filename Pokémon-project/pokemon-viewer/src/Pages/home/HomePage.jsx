@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-
 import styles from "./HomePage.module.css";
 import CardPage from "../card/CardPage.jsx";
 import { fetchPokemonList, fetchPokemonDetails } from "../../pokemonApi.js";
+
+import Navbar from "../../components/Navbar.jsx";
 
 function HomePage() {
   const [pokemonList, setPokemonList] = useState([]);
@@ -41,7 +42,7 @@ function HomePage() {
   }
   return (
     <div>
-      <h1 className={styles.title}>Pokémon Card Viewer</h1>
+      <Navbar />
       <div className={styles.pokemonGrid}>
         {pokemonList.map((pokemon, index) => (
           <CardPage
