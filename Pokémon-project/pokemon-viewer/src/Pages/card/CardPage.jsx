@@ -15,11 +15,13 @@ function CardPage({
 }) {
   const [open, setOpen] = useState(false);
 
-  const handleOpen = () => {
+  const handleOpen = (event) => {
+    event.stopPropagation();
     setOpen(true);
   };
 
-  const handleClose = () => {
+  const handleClose = (event) => {
+    event.stopPropagation();
     setOpen(false);
   };
 
