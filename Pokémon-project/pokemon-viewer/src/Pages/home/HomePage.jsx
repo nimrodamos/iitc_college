@@ -3,8 +3,6 @@ import styles from "./HomePage.module.css";
 import CardPage from "../card/CardPage.jsx";
 import { fetchPokemonList, fetchPokemonDetails } from "../../pokemonApi.js";
 
-import Navbar from "../../components/Navbar.jsx";
-
 function HomePage() {
   const [pokemonList, setPokemonList] = useState([]);
   const [error, setError] = useState(null);
@@ -42,7 +40,6 @@ function HomePage() {
   }
   return (
     <div>
-      <Navbar />
       <div className={styles.pokemonGrid}>
         {pokemonList.map((pokemon, index) => (
           <CardPage

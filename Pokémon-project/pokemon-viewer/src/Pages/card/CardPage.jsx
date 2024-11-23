@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import Modal from "@mui/material/Modal";
 import styles from "./CardPage.module.css";
 import typeColors from "./typeColors";
+import Button from "@mui/material/Button";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import { IconButton } from "@mui/material";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 function CardPage({
   name,
@@ -14,6 +18,7 @@ function CardPage({
   baseExperience,
 }) {
   const [open, setOpen] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const handleOpen = (event) => {
     event.stopPropagation();
@@ -23,6 +28,11 @@ function CardPage({
   const handleClose = (event) => {
     event.stopPropagation();
     setOpen(false);
+  };
+
+  const handleFavoriteClick = (event) => {
+    event.stopPropagation(); // מונע סגירה של המודל בעת לחיצה על הכפתור
+    setIsFavorite(!isFavorite);
   };
 
   const primaryType = types[0];
@@ -36,6 +46,16 @@ function CardPage({
     >
       <img src={image} alt={name} />
       <h3>{name}</h3>
+      <IconButton
+        onClick={handleFavoriteClick}
+        color={isFavorite ? "error" : "primary"}
+        aria-label="favorite"
+        sx={{
+          fontSize: "2rem",
+        }}
+      >
+        {isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+      </IconButton>
       <Modal
         open={open}
         onClose={handleClose}
@@ -70,6 +90,16 @@ function CardPage({
           <button onClick={handleClose} className={styles.modalCloseButton}>
             Close
           </button>
+          <IconButton
+            onClick={handleFavoriteClick}
+            color={isFavorite ? "error" : "primary"}
+            aria-label="favorite"
+            sx={{
+              fontSize: "2rem",
+            }}
+          >
+            {isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+          </IconButton>
         </div>
       </Modal>
     </div>
