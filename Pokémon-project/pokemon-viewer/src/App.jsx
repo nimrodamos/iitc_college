@@ -5,6 +5,7 @@ import AboutPage from "./Pages/AboutPage/AboutPage";
 import Navbar from "./components/Navbar";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import FavoritesManager from "./components/FavoritesManager";
+import FavoritePage from "./Pages/FavoritePage/FavoritePage";
 
 function App() {
   return (
