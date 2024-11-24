@@ -7,8 +7,8 @@ export const fetchPokemonList = async (limit = 20) => {
     const response = await axios.get(`${BASE_URL}?limit=${limit}`);
     return response.data.results;
   } catch (error) {
-    console.error("Error fetching Pokémon list:", error);
-    throw error;
+    console.error("Error fetching Pokémon list:", error.message || error);
+    return [];
   }
 };
 
@@ -19,8 +19,10 @@ export const fetchPokemonDetails = async (url) => {
       name: response.data.name,
       image:
         response.data.sprites.other.showdown.front_default ||
-        response.data.sprites.other["official-artwork"].front_default,
+        response.data.sprites.other["official-artwork"].front_default ||
+        response.data.sprites.front_default,
       types: response.data.types.map((typeInfo) => typeInfo.type.name),
+      audio: response.data.audio || null,
       stats: {
         hp: response.data.stats[0]?.base_stat || 0,
         attack: response.data.stats[1]?.base_stat || 0,
@@ -35,7 +37,8 @@ export const fetchPokemonDetails = async (url) => {
       baseExperience: response.data.base_experience || 0,
     };
   } catch (error) {
-    console.error("Error fetching Pokémon details:", error);
-    throw error;
+    console.error("Error fetching Pokémon details:", error.message || error);
+
+    throw new Error("Failed to fetch Pokémon details. Please try again.");
   }
 };

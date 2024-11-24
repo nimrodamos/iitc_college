@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import Modal from "@mui/material/Modal";
 import styles from "./CardPage.module.css";
 import typeColors from "./typeColors";
-import Button from "@mui/material/Button";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import { IconButton } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { IconButton } from "@mui/material";
 
 function CardPage({
   name,
@@ -16,9 +15,12 @@ function CardPage({
   weight,
   height,
   baseExperience,
+  pokemon,
+  isFavorite,
+  addFavorite,
+  removeFavorite,
 }) {
   const [open, setOpen] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
 
   const handleOpen = (event) => {
     event.stopPropagation();
@@ -30,9 +32,15 @@ function CardPage({
     setOpen(false);
   };
 
-  const handleFavoriteClick = (event) => {
-    event.stopPropagation(); // מונע סגירה של המודל בעת לחיצה על הכפתור
-    setIsFavorite(!isFavorite);
+  const handleFavoriteClick = () => {
+    console.log("Favorite button clicked for:", name);
+    if (isFavorite) {
+      console.log("Removing from favorites:", name);
+      removeFavorite({ name, image });
+    } else {
+      console.log("Adding to favorites:", name);
+      addFavorite({ name, image });
+    }
   };
 
   const primaryType = types[0];
@@ -46,16 +54,10 @@ function CardPage({
     >
       <img src={image} alt={name} />
       <h3>{name}</h3>
-      <IconButton
-        onClick={handleFavoriteClick}
-        color={isFavorite ? "error" : "primary"}
-        aria-label="favorite"
-        sx={{
-          fontSize: "2rem",
-        }}
-      >
-        {isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+      <IconButton onClick={handleFavoriteClick}>
+        {isFavorite ? <FavoriteIcon color="error" /> : <FavoriteBorderIcon />}
       </IconButton>
+
       <Modal
         open={open}
         onClose={handleClose}
@@ -64,7 +66,7 @@ function CardPage({
       >
         <div className={styles.modalBox} style={{ backgroundColor }}>
           <h2 id="modal-title">
-            {name.toUpperCase()} ({types.join(", ")})
+            {name.toUpperCase()} ({types.join(", ")} )
           </h2>
           <img src={image} alt={name} className={styles.modalImage} />
           <div className={styles.section}>
@@ -90,6 +92,7 @@ function CardPage({
           <button onClick={handleClose} className={styles.modalCloseButton}>
             Close
           </button>
+
           <IconButton
             onClick={handleFavoriteClick}
             color={isFavorite ? "error" : "primary"}

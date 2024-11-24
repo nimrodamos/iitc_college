@@ -3,7 +3,7 @@ import styles from "./HomePage.module.css";
 import CardPage from "../card/CardPage.jsx";
 import { fetchPokemonList, fetchPokemonDetails } from "../../pokemonApi.js";
 
-function HomePage() {
+function HomePage({ favorites = [], addFavorite, removeFavorite }) {
   const [pokemonList, setPokemonList] = useState([]);
   const [error, setError] = useState(null);
 
@@ -38,6 +38,7 @@ function HomePage() {
       </div>
     );
   }
+
   return (
     <div>
       <div className={styles.pokemonGrid}>
@@ -52,6 +53,14 @@ function HomePage() {
             weight={pokemon.weight}
             height={pokemon.height}
             baseExperience={pokemon.baseExperience}
+            isFavorite={
+              Array.isArray(favorites) &&
+              favorites
+                .filter((fav) => fav !== null)
+                .some((fav) => fav.name === pokemon.name)
+            }
+            addFavorite={addFavorite}
+            removeFavorite={removeFavorite}
           />
         ))}
       </div>
