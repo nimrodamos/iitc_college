@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../home/HomePage.module.css";
 import CardPage from "../card/CardPage";
+import typeColors from "../card/typeColors";
 
 function FavoritePage({ favorites, addFavorite, removeFavorite }) {
   return (
@@ -10,22 +11,32 @@ function FavoritePage({ favorites, addFavorite, removeFavorite }) {
         <p>No favorite Pokémon yet! Add some from the home page.</p>
       ) : (
         <div className={styles.pokemonGrid}>
-          {favorites.map((pokemon, index) => (
-            <CardPage
-              key={index}
-              name={pokemon.name}
-              image={pokemon.image}
-              types={pokemon.types}
-              stats={pokemon.stats}
-              abilities={pokemon.abilities}
-              weight={pokemon.weight}
-              height={pokemon.height}
-              baseExperience={pokemon.baseExperience}
-              isFavorite={true}
-              addFavorite={addFavorite}
-              removeFavorite={removeFavorite}
-            />
-          ))}
+          {favorites.map((pokemon, index) => {
+            const primaryType = pokemon.types[0];
+            const backgroundColor = typeColors[primaryType] || "#f4f4f4"; // צבע ברירת מחדל אם הטייפ לא נמצא
+
+            return (
+              <div
+                key={index}
+                className={styles.pokemonCard}
+                style={{ backgroundColor }}
+              >
+                <CardPage
+                  name={pokemon.name}
+                  image={pokemon.image}
+                  types={pokemon.types}
+                  stats={pokemon.stats}
+                  abilities={pokemon.abilities}
+                  weight={pokemon.weight}
+                  height={pokemon.height}
+                  baseExperience={pokemon.baseExperience}
+                  isFavorite={true}
+                  addFavorite={addFavorite}
+                  removeFavorite={removeFavorite}
+                />
+              </div>
+            );
+          })}
         </div>
       )}
     </div>

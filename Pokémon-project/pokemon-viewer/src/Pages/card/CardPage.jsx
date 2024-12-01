@@ -46,6 +46,9 @@ function CardPage({
   const primaryType = types[0];
   const backgroundColor = typeColors[primaryType] || "#f4f4f4";
 
+  console.log(`CardPage - ${name} types:`, types);
+  console.log(`CardPage - Background color for ${name}:`, backgroundColor);
+
   return (
     <div
       className={styles.card}
