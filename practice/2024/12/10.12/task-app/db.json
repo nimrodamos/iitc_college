@@ -1,0 +1,36 @@
+{
+  "tasks": [
+    {
+      "id": "2",
+      "title": "Learn TypeScript",
+      "description": "Understand the basics of TypeScript and its integration with React.",
+      "dueDate": "2023-12-15",
+      "priority": "Medium",
+      "status": "Pending"
+    },
+    {
+      "id": "3",
+      "title": "Prepare for Presentation",
+      "description": "Draft slides and rehearse for the upcoming client meeting.",
+      "dueDate": "2023-12-20",
+      "priority": "Low",
+      "status": "Completed"
+    },
+    {
+      "id": "1733836612974",
+      "title": "dw",
+      "description": "dwd",
+      "dueDate": "11111-11-11",
+      "priority": "Medium",
+      "status": "In Progress"
+    },
+    {
+      "id": 1733839337930,
+      "title": "גדש",
+      "description": "מחמ",
+      "dueDate": "0087-08-02",
+      "priority": "Medium",
+      "status": "Pending"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "recipes": [
+    {
+      "id": "1",
+      "title": "Chocolate Cake",
+      "image": "/src/images/cake.webp",
+      "ingredients": [
+        "2 cups of flour",
+        "1 cup of sugar",
+        "1/2 cup of cocoa powder",
+        "1 cup of milk",
+        "2 eggs",
+        "1 tsp of baking powder"
+      ],
+      "instructions": "Mix all ingredients in a bowl. Pour into a greased pan. Bake at 180°C (350°F) for 30 minutes.",
+      "category": "Dessert"
+    },
+    {
+      "id": "2",
+      "title": "Caesar Salad",
+      "image": "/src/images/salad.webp",
+      "ingredients": [
+        "1 head of romaine lettuce",
+        "1/2 cup of croutons",
+        "1/4 cup of grated Parmesan cheese",
+        "Caesar dressing"
+      ],
+      "instructions": "Chop lettuce. Add croutons and Parmesan cheese. Drizzle with Caesar dressing and toss well.",
+      "category": "Lunch"
+    },
+    {
+      "id": "3",
+      "title": "Spaghetti Bolognese",
+      "image": "/src/images/spaghetti.webp",
+      "ingredients": [
+        "200g of spaghetti",
+        "1/2 pound of ground beef",
+        "1 cup of tomato sauce",
+        "1 onion, chopped",
+        "2 garlic cloves, minced",
+        "Salt and pepper to taste"
+      ],
+      "instructions": "Cook spaghetti according to package instructions. In a pan, sauté onion and garlic, add beef, cook until browned. Add tomato sauce and simmer for 15 minutes. Serve over spaghetti.",
+      "category": "Dinner"
+    },
+    {
+      "id": "4",
+      "title": "Pancakes",
+      "image": "/src/images/pancakes .webp",
+      "ingredients": [
+        "1 cup of flour",
+        "2 tbsp of sugar",
+        "1 tsp of baking powder",
+        "1 cup of milk",
+        "1 egg",
+        "2 tbsp of melted butter"
+      ],
+      "instructions": "Mix dry ingredients in a bowl. Add milk, egg, and butter. Cook on a greased skillet over medium heat until bubbles form, then flip and cook until golden.",
+      "category": "Breakfast"
+    },
+    {
+      "id": "5",
+      "title": "Vegetable Stir-Fry",
+      "image": "/src/images/vegetable .webp",
+      "ingredients": [
+        "1 cup of broccoli florets",
+        "1 carrot, sliced",
+        "1 bell pepper, sliced",
+        "1/4 cup of soy sauce",
+        "1 tbsp of sesame oil",
+        "2 garlic cloves, minced"
+      ],
+      "instructions": "Heat sesame oil in a pan. Add garlic and vegetables, stir-fry for 5-7 minutes. Add soy sauce and toss to coat.",
+      "category": "Dinner"
+    },
+    {
+      "id": "6",
+      "title": "Pizza Margherita",
+      "image": "/src/images/pizza.webp",
+      "ingredients": [
+        "2 1/2 cups of all-purpose flour",
+        "1 packet (7g) of dry yeast",
+        "1 tsp of sugar",
+        "1 cup of warm water",
+        "2 tbsp of olive oil",
+        "1/2 tsp of salt",
+        "1/2 cup of tomato sauce",
+        "1 1/2 cups of shredded mozzarella cheese",
+        "Fresh basil leaves",
+        "1 tbsp of olive oil for drizzling"
+      ],
+      "instructions": "In a bowl, dissolve the yeast and sugar in warm water. Let it sit for 5-10 minutes until frothy. Add flour, salt, and olive oil. Knead until a smooth dough forms. Cover and let it rise for 1 hour. Roll out the dough into a circle. Spread tomato sauce evenly, sprinkle mozzarella cheese, and top with fresh basil leaves. Drizzle olive oil. Bake in a preheated oven at 220°C (425°F) for 12-15 minutes or until the crust is golden and the cheese is bubbly.",
+      "category": "Dinner"
+    }
+  ]
+}
