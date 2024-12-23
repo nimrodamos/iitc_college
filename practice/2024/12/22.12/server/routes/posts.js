@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Post = require("../models/post.js");
 
-// GET כל הפוסטים
 router.get("/", async (req, res) => {
   try {
     const posts = await Post.find();
@@ -12,7 +11,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// GET פוסט יחיד לפי ID
 router.get("/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
@@ -23,7 +21,6 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// POST יצירת פוסט חדש
 router.post("/", async (req, res) => {
   try {
     const newPost = new Post(req.body);
@@ -34,11 +31,10 @@ router.post("/", async (req, res) => {
   }
 });
 
-// PUT עדכון פוסט לפי ID
 router.put("/:id", async (req, res) => {
   try {
     const updatedPost = await Post.findByIdAndUpdate(req.params.id, req.body, {
-      new: true, // מחזיר את הפוסט המעודכן
+      new: true,
     });
     if (!updatedPost)
       return res.status(404).json({ message: "Post not found" });
@@ -48,7 +44,6 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// DELETE מחיקת פוסט לפי ID
 router.delete("/:id", async (req, res) => {
   try {
     const deletedPost = await Post.findByIdAndDelete(req.params.id);

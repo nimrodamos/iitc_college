@@ -1,4 +1,4 @@
-require("dotenv").config(); // טוען את משתני הסביבה מה-`.env`
+require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -6,11 +6,9 @@ const cors = require("cors");
 
 const app = express();
 
-// Middlewares
 app.use(cors());
 app.use(express.json());
 
-// חיבור ל-MongoDB Atlas
 const dbURI = process.env.dbURI;
 const PORT = process.env.PORT || 5000;
 
@@ -24,7 +22,6 @@ mongoose
 // Routes
 app.use("/posts", require("./routes/posts"));
 
-// הפעלת השרת
 app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`)
 );
